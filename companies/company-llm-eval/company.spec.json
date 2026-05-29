@@ -1,0 +1,84 @@
+{
+  "id": "company-llm-eval",
+  "name": "company-llm-eval",
+  "display_name": {
+    "zh": "大模型评测公司",
+    "en": "LLM Evaluation Company"
+  },
+  "domain": "LLM evaluation, benchmark design, execution, review, and internal reporting",
+  "task_level": "L2",
+  "status": "active",
+  "created_by": "headquarters",
+  "creation_reason": "Initial long-lived company for local and general LLM evaluation workflows.",
+  "reuse_decision": {
+    "checked_existing_companies": true,
+    "decision": "created_as_first_company",
+    "reason": "No existing company was available when this workflow domain was first established."
+  },
+  "departments": [
+    {
+      "id": "eval-orchestration",
+      "display_name": { "zh": "评测编排部", "en": "Evaluation Orchestration Department" },
+      "agents": ["workflow-orchestrator"]
+    },
+    {
+      "id": "eval-planning",
+      "display_name": { "zh": "评测规划部", "en": "Evaluation Planning Department" },
+      "agents": ["app-analyzer", "feasibility-assessor", "model-nomenclature-specialist", "model-selector", "strategy-planner"]
+    },
+    {
+      "id": "eval-design",
+      "display_name": { "zh": "评测设计部", "en": "Evaluation Design Department" },
+      "agents": ["benchmark-researcher", "metric-definer", "test-case-designer"]
+    },
+    {
+      "id": "eval-execution",
+      "display_name": { "zh": "评测执行部", "en": "Evaluation Execution Department" },
+      "agents": ["capability-tester", "latency-tester", "stress-tester"]
+    },
+    {
+      "id": "eval-review",
+      "display_name": { "zh": "评测审核部", "en": "Evaluation Review Department" },
+      "agents": ["data-verifier", "plan-reviewer", "report-compiler"]
+    }
+  ],
+  "minimum_structure": {
+    "has_orchestration": true,
+    "has_planning": true,
+    "has_execution": true,
+    "has_review": true,
+    "omitted_by_highest_leader": []
+  },
+  "second_perspective": {
+    "required": true,
+    "reason": "LLM evaluation involves research, design, and benchmark choices that may be biased from a single perspective.",
+    "agents": ["benchmark-researcher", "plan-reviewer"]
+  },
+  "workflows": [
+    "companies/company-llm-eval/WORKFLOW.md"
+  ],
+  "artifacts": {
+    "internal": [".md", ".csv", ".json"],
+    "external": ["pptx", "docx", "pdf", "html", "csv", "json"]
+  },
+  "lifecycle": {
+    "last_review_at": null,
+    "review_reason": null,
+    "closure_requires_approval": true
+  },
+  "performance": {
+    "execution_count": 0,
+    "success_count": 0,
+    "failure_count": 0,
+    "review_failure_count": 0,
+    "reuse_count": 0,
+    "delivery_count": 0,
+    "overlap_warnings": 0,
+    "last_execution_at": null,
+    "last_success_at": null
+  },
+  "governance_notes": [
+    "Company execution requires explicit approval.",
+    "Closure, merge, or restructuring requires headquarters review and approval."
+  ]
+}

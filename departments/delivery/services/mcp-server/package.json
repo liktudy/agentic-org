@@ -1,0 +1,14 @@
+{
+  "name": "delivery-mcp-server",
+  "version": "1.0.0",
+  "description": "Delivery MCP server for converting Markdown into PPT/PDF/Word/HTML/CSV/JSON artifacts",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "markdown-it": "^14.0.0",
+    "puppeteer": "^23.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "delivery": {
+      "type": "local",
+      "command": ["node", "departments/delivery/services/mcp-server/server.js"],
+      "enabled": true
+    }
+  }
+}
