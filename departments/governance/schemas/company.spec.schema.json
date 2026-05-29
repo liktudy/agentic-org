@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "agentic-org Company Spec",
+  "type": "object",
+  "required": ["id", "name", "display_name", "domain", "task_level", "status", "created_by", "creation_reason", "departments", "workflows", "artifacts", "lifecycle", "performance"],
+  "properties": {
+    "id": { "type": "string" },
+    "name": { "type": "string" },
+    "display_name": {
+      "type": "object",
+      "required": ["zh", "en"],
+      "properties": {
+        "zh": { "type": "string" },
+        "en": { "type": "string" }
+      }
+    },
+    "domain": { "type": "string" },
+    "task_level": {
+      "type": "string",
+      "enum": ["L1", "L2", "L3"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "paused", "under_review", "merge_candidate", "closure_candidate", "closed"]
+    },
+    "created_by": { "type": "string" },
+    "creation_reason": { "type": "string" },
+    "reuse_decision": {
+      "type": "object",
+      "properties": {
+        "checked_existing_companies": { "type": "boolean" },
+        "decision": { "type": "string" },
+        "reason": { "type": "string" }
+      }
+    },
+    "departments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "display_name", "agents"],
+        "properties": {
+          "id": { "type": "string" },
+          "display_name": {
+            "type": "object",
+            "properties": {
+              "zh": { "type": "string" },
+              "en": { "type": "string" }
+            }
+          },
+          "agents": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "minimum_structure": {
+      "type": "object",
+      "properties": {
+        "has_orchestration": { "type": "boolean" },
+        "has_planning": { "type": "boolean" },
+        "has_execution": { "type": "boolean" },
+        "has_review": { "type": "boolean" },
+        "omitted_by_highest_leader": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "second_perspective": {
+      "type": "object",
+      "properties": {
+        "required": { "type": "boolean" },
+        "reason": { "type": "string" },
+        "agents": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "workflows": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "artifacts": {
+      "type": "object",
+      "properties": {
+        "internal": { "type": "array", "items": { "type": "string" } },
+        "external": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "last_review_at": { "type": ["string", "null"] },
+        "review_reason": { "type": ["string", "null"] },
+        "closure_requires_approval": { "type": "boolean" }
+      }
+    },
+    "performance": {
+      "type": "object",
+      "properties": {
+        "execution_count": { "type": "integer", "minimum": 0 },
+        "success_count": { "type": "integer", "minimum": 0 },
+        "failure_count": { "type": "integer", "minimum": 0 },
+        "review_failure_count": { "type": "integer", "minimum": 0 },
+        "reuse_count": { "type": "integer", "minimum": 0 },
+        "delivery_count": { "type": "integer", "minimum": 0 },
+        "overlap_warnings": { "type": "integer", "minimum": 0 },
+        "last_execution_at": { "type": ["string", "null"] },
+        "last_success_at": { "type": ["string", "null"] }
+      }
+    },
+    "governance_notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

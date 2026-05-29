@@ -1,0 +1,15 @@
+node_modules/
+**/pandoc-bin/
+dist/
+build/
+coverage/
+.env
+.env.*
+*.log
+
+# Local runtime outputs and work logs
+outputs/
+company-*/outputs/
+companies/*/outputs/
+departments/*/outputs/
+departments/governance/worklogs/
