@@ -7,18 +7,18 @@ const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
 function convert(sourcePath, templateConfig) {
   const absPath = path.resolve(sourcePath);
   if (!fs.existsSync(absPath)) {
-    throw new Error(`文件不存在: ${absPath}`);
+    throw new Error(`File does not exist: ${absPath}`);
   }
 
   const content = fs.readFileSync(absPath, "utf-8");
   const bodyHtml = md.render(content);
 
   const html = `<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${templateConfig.title || "报告"}</title>
+  <title>${templateConfig.title || "Report"}</title>
   <style>
     body {
       font-family: ${templateConfig.fontFamily || "'Segoe UI', Arial, sans-serif"};
@@ -52,7 +52,7 @@ function convert(sourcePath, templateConfig) {
   const outName = `${path.basename(absPath, ".md")}.html`;
   const outPath = path.join(outDir, outName);
   fs.writeFileSync(outPath, html, "utf-8");
-  return `HTML 已生成: ${outPath}`;
+  return `HTML generated: ${outPath}`;
 }
 
 module.exports = { convert };

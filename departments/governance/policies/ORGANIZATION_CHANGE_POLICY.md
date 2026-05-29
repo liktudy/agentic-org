@@ -1,12 +1,12 @@
 # Organization Change Policy
 
-## Purpose
+### Purpose
 
 This policy governs creating, modifying, deleting, merging, splitting, and moving companies, departments, and role agents.
 
 Organization structure is a core asset. It must stay clear, traceable, and recoverable.
 
-## Hard Rules
+### Hard Rules
 
 - The Highest Leader may directly initiate organization changes.
 - Other agents, departments, and companies may only submit organization change requests.
@@ -14,7 +14,7 @@ Organization structure is a core asset. It must stay clear, traceable, and recov
 - No rollback snapshot, no modification or deletion.
 - Changes that affect boundaries, permissions, workflow behavior, deletion, merge, split, closure, or restructuring require Highest Leader confirmation.
 
-## Change Types
+### Change Types
 
 ```text
 create_company
@@ -33,7 +33,7 @@ delete_agent
 move_agent
 ```
 
-## Record And Rollback
+### Record And Rollback
 
 Every modification or deletion must create:
 
@@ -47,9 +47,9 @@ departments/governance/change-records/<YYYYMMDD-HHMMSS-change-id>/
 
 Rollback data should include organization source-of-truth files only, not runtime outputs.
 
-## Company Changes
+### Company Changes
 
-### Create Company
+#### Create Company
 
 Required:
 
@@ -61,7 +61,7 @@ Required:
 - Required departments and agents are generated.
 - Workflow execution waits for approval.
 
-### Modify Company
+#### Modify Company
 
 Must update affected source-of-truth files:
 
@@ -74,7 +74,7 @@ Must update affected source-of-truth files:
 
 Boundary or workflow changes require Highest Leader confirmation.
 
-### Delete Or Close Company
+#### Delete Or Close Company
 
 Default behavior is closure, not physical deletion:
 
@@ -86,7 +86,7 @@ Default behavior is closure, not physical deletion:
 
 Physical deletion is allowed only when the Highest Leader explicitly requests it, and only after a full company rollback snapshot is created.
 
-### Merge Or Split Company
+#### Merge Or Split Company
 
 Must document:
 
@@ -98,9 +98,9 @@ Must document:
 - risks
 - Highest Leader confirmation
 
-## Department Changes
+### Department Changes
 
-### Create Department
+#### Create Department
 
 Required:
 
@@ -111,11 +111,11 @@ Required:
 - `company.spec.json` and `ORG_STRUCTURE.md` are updated.
 - `WORKFLOW.md` is updated when workflow stages change.
 
-### Modify Department
+#### Modify Department
 
 Boundary or workflow changes require Highest Leader confirmation and rollback snapshot.
 
-### Delete Department
+#### Delete Department
 
 Required:
 
@@ -126,9 +126,9 @@ Required:
 - Workflows no longer depend on the department.
 - `company.spec.json`, `ORG_STRUCTURE.md`, and `WORKFLOW.md` are updated.
 
-## Agent Changes
+### Agent Changes
 
-### Create Agent
+#### Create Agent
 
 Required:
 
@@ -139,11 +139,11 @@ Required:
 - `company.spec.json` is updated.
 - Agent file is generated under `departments/<department>/agents/<agent>.md`.
 
-### Modify Agent
+#### Modify Agent
 
 Permission changes, department moves, or responsibility expansion require Highest Leader confirmation and rollback snapshot.
 
-### Delete Agent
+#### Delete Agent
 
 Required:
 
@@ -153,7 +153,7 @@ Required:
 - No workflow depends on the agent.
 - Owning department still satisfies minimum structure.
 
-## Post-Change Verification
+### Post-Change Verification
 
 After any organization change, verify:
 

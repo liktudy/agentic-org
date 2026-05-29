@@ -1,9 +1,9 @@
 # OpenCode Adapter
 
-本目录保留 `agentic-org` 面向 OpenCode 的集团级适配说明和 MCP 配置。
+This directory contains OpenCode adapter notes and optional runtime configuration.
 
-说明：
+Rules:
 
-- OpenCode 的 `.opencode/agents` 是运行时要求，不是 `agentic-org` 的组织真源。
-- 后续应从 `companies/*/departments/*/agents/*.md` 生成或同步 OpenCode agent 注册目录。
-- 当前 MCP 配置保存在 `opencode.json`。
+- OpenCode configuration is an adapter, not the organization source of truth.
+- Future OpenCode agent registration should be generated or synchronized from `companies/*/departments/*/agents/*.md`.
+- Headquarters standards remain authoritative.

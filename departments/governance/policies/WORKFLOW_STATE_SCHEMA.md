@@ -1,16 +1,18 @@
 # Workflow State Schema
 
-## 中文版
+## Purpose
 
-`workflow-state.json` 用于记录任务当前状态，不用于保存完整过程日志。
+`workflow-state.json` records current task state only.
 
-推荐字段：
+It is not a process log and must not become a detailed execution diary.
+
+## Recommended Fields
 
 ```json
 {
   "task_id": "YYYYMMDD-short-topic",
-  "company": "company-llm-eval",
-  "current_stage": "eval-planning",
+  "company": "company-<domain>",
+  "current_stage": "<domain>-planning",
   "status": "in_progress",
   "owner": "workflow-orchestrator",
   "artifacts": [],
@@ -21,7 +23,7 @@
 }
 ```
 
-状态值：
+## Status Values
 
 - `draft`
 - `in_progress`
@@ -32,6 +34,9 @@
 - `completed`
 - `abandoned`
 
-## English Version
+## Rules
 
-`workflow-state.json` records task state only. Detailed process logs should stay local and should not be committed unless they become reusable governance knowledge.
+- Update state only when task stage, owner, review count, escalation, or approval changes.
+- Keep detailed process notes local.
+- Do not commit command output logs.
+- Commit state only when it has reusable governance or workflow value.

@@ -1,65 +1,59 @@
 # Group Departments Organization Structure
 
-## 中文版
+`departments/` contains the headquarters departments of `agentic-org`. Headquarters departments build shared capabilities: governance, organization design, workflow generation, platform adapters, and delivery processing.
 
-`departments/` 是 `agentic-org` 的集团部门集合。集团部门负责建设总部能力：制度、组织设计、工作流生成、平台适配和交付加工。
+## Departments
 
-## 部门
+### Governance Department
 
-### 治理部 / Governance Department
+Path: `departments/governance`
 
-路径：`departments/governance`
+Responsibilities:
 
-职责：
+- Maintain Highest Leader decision rules.
+- Maintain agent permission levels.
+- Maintain company lifecycle, performance, reuse, merge, and closure rules.
+- Maintain artifact standards, schemas, naming policy, review policy, and standard levels.
 
-- 维护最高领导者决策原则。
-- 维护 agent 权限等级。
-- 维护公司生命周期、绩效、复用、合并和关闭规则。
-- 维护产物范式、schema、命名政策和审核升级制度。
+### Organization Design Department
 
-### 组织设计部 / Organization Design Department
+Path: `departments/organization-design`
 
-路径：`departments/organization-design`
+Responsibilities:
 
-职责：
+- Decide whether a user-described workflow can reuse an existing company.
+- Design company positioning, departments, roles, and boundaries when a new company is needed.
+- Identify responsibility overlap across companies and recommend merges.
+- Identify long-failing or inactive companies and recommend pause, restructure, or closure.
 
-- 根据用户描述的工作流判断是否复用已有公司。
-- 当需要新公司时，设计公司定位、部门、岗位和边界。
-- 识别多个子公司的职责重叠，提出合并建议。
-- 识别长期失败或长期未执行的公司，提出暂停、重组或关闭建议。
+### Workflow Factory Department
 
-### 工作流工厂部 / Workflow Factory Department
+Path: `departments/workflow-factory`
 
-路径：`departments/workflow-factory`
+Responsibilities:
 
-职责：
+- Convert natural-language workflows into structured company specifications.
+- Generate or update `company.spec.json`, `WORKFLOW.md`, `ORG_STRUCTURE.md`, and agent files.
+- Convert headquarters standards into executable company scaffolds.
+- Stop for approval before company workflow execution.
 
-- 把自然语言工作流转换成结构化公司规格。
-- 生成或更新 `company.spec.json`、`WORKFLOW.md`、`ORG_STRUCTURE.md` 和 agent 文件。
-- 将总部制度转换为可执行的公司脚手架。
-- 在执行前提交确认，不自动启动子公司工作流。
+### Platform Adapters Department
 
-### 平台适配部 / Platform Adapters Department
+Path: `departments/platform-adapters`
 
-路径：`departments/platform-adapters`
+Responsibilities:
 
-职责：
+- Maintain adaptation rules for Codex, Claude Code, OpenCode, and other agent runtimes.
+- Prevent platform-specific configuration from becoming the organization source of truth.
+- Generate or synchronize runtime configuration from the organization source of truth.
 
-- 维护 Codex、Claude Code、OpenCode 等平台适配规则。
-- 防止平台私有配置成为组织真源。
-- 从组织真源生成或同步各平台运行配置。
+### Delivery Department
 
-### 交付部 / Delivery Department
+Path: `departments/delivery`
 
-路径：`departments/delivery`
+Responsibilities:
 
-职责：
-
-- 制定并维护对外交付规范。
-- 维护交付模板。
-- 将子公司内部标准产物加工为外部交付物。
-- 通过 MCP 服务提供格式转换能力。
-
-## English Version
-
-Group departments build headquarters capabilities: governance, organization design, workflow generation, platform adapters, and delivery processing.
+- Define and maintain external delivery standards.
+- Maintain delivery templates.
+- Convert company internal standard artifacts into external deliverables.
+- Provide format conversion through MCP services and local tools.

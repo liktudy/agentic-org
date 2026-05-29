@@ -1,6 +1,6 @@
 # agentic-org Architecture
 
-## Core Idea
+### Core Idea
 
 `agentic-org` separates headquarters governance from company execution.
 
@@ -20,7 +20,7 @@ Companies own:
 - internal artifacts
 - execution history
 
-## Directory Model
+### Directory Model
 
 ```text
 agentic-org/
@@ -31,21 +31,16 @@ agentic-org/
 |   |-- platform-adapters/
 |   `-- delivery/
 `-- companies/
-    `-- company-llm-eval/
+    `-- company-<domain>/
         |-- company.spec.json
         |-- departments/
-        |   |-- eval-orchestration/
-        |   |-- eval-planning/
-        |   |-- eval-design/
-        |   |-- eval-execution/
-        |   `-- eval-review/
         `-- runtime/
             |-- codex/
             |-- claude-code/
             `-- opencode/
 ```
 
-## Source of Truth
+### Source of Truth
 
 Organization source of truth:
 
@@ -66,7 +61,7 @@ departments/platform-adapters/
 companies/<company>/runtime/
 ```
 
-## Design Principles
+### Design Principles
 
 - Reuse existing companies before creating new ones.
 - Company generation and company execution are separate decisions.

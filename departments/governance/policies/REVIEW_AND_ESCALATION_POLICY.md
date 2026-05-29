@@ -1,32 +1,45 @@
 # Review and Escalation Policy
 
-## 中文版
+## Purpose
 
-### 审核回退
+This policy prevents infinite review loops and defines escalation behavior.
 
-- 第 1 次失败：退回原责任部门修正。
-- 第 2 次失败：评测编排部介入，记录失败原因并重新拆解任务。
-- 第 3 次失败：提交最高领导者决策。
+## Review Failure Handling
 
-### 最高领导者可选决策
+Repeated review failures must not create an infinite loop.
 
-- 继续返工。
-- 提权审核。
-- 降级目标。
-- 暂停任务。
-- 废弃任务。
-- 调整组织结构或职责边界。
+- First failure: return to the responsible owner for revision.
+- Second failure: involve orchestration or review owner to restate the issue and narrow the scope.
+- Third failure: escalate to the Highest Leader with options and impact.
 
-### 留痕要求
+## Highest Leader Options
 
-默认不记录过程日志。只在以下情况生成最小必要文件：
+When escalation occurs, present these options when relevant:
 
-- 失败任务：`ERROR_REPORT.md`
-- 需要最高领导者决策：`DECISION_REQUEST.md`
-- 生命周期或绩效变化：更新 `company.spec.json`
+- continue revision
+- narrow task scope
+- change owner
+- add second perspective
+- request permission expansion
+- pause the task
+- abandon the task
+- modify organization structure
 
-成功任务只保留最终产物和必要的结构化状态更新。
+## Escalation Record
 
-## English Version
+Escalation should produce a concise `DECISION_REQUEST.md` when a decision is required.
 
-Repeated review failures must not create an infinite loop. After the third failure, escalate to the Highest Leader with options and impact. Do not create process logs by default.
+The request must include:
+
+- current failure summary
+- attempted revisions
+- remaining blockers
+- options
+- recommendation
+- exact question for the Highest Leader
+
+## Logging Rule
+
+Do not create process logs by default.
+
+Record only decision requests, error reports, final artifacts, and meaningful governance updates.

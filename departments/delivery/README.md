@@ -1,17 +1,15 @@
 # Delivery Department
 
-## 中文版
+`delivery` is the Delivery Department of `agentic-org`.
 
-`delivery` 是 `agentic-org` 的集团交付部。
+The department owns:
 
-该部门负责：
+- external delivery standards
+- delivery templates
+- conversion of company internal artifacts into external deliverables
+- format conversion services for companies
 
-- 维护集团对外交付规范。
-- 维护交付模板。
-- 将子公司内部标准产物加工为外部交付物。
-- 通过工具服务为各子公司提供格式转换能力。
-
-## 目录说明
+## Directory Layout
 
 ```text
 delivery/
@@ -24,7 +22,7 @@ delivery/
 
 ### agents
 
-部门员工定义：
+Department role definitions:
 
 - `standard-setter.md`
 - `template-builder.md`
@@ -32,16 +30,12 @@ delivery/
 
 ### templates
 
-部门模板资产，包括商务简报、技术报告、极简文档等模板配置。
+Delivery template assets for executive briefs, technical reports, and minimal documents.
 
 ### services/mcp-server
 
-交付部对外提供工具能力的 MCP 服务实现。MCP 服务不是部门本身，而是部门使用和维护的服务工具。
+MCP service implementation for delivery tooling. The MCP service is not the department itself; it is a tool maintained and used by the department.
 
 ### outputs
 
-实际对外交付产物目录。该目录只保留在本地，不提交 Git。
-
-## English Version
-
-`delivery` is the Delivery Department of `agentic-org`. It owns delivery standards, templates, format conversion services, and external deliverable generation.
+Local external deliverable output directory. This directory is local-only and must not be committed to Git.

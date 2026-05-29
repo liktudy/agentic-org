@@ -9,7 +9,9 @@ coverage/
 
 # Local runtime outputs and work logs
 outputs/
+companies/
 company-*/outputs/
 companies/*/outputs/
 departments/*/outputs/
 departments/governance/worklogs/
+departments/governance/change-records/*/rollback/

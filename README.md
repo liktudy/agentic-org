@@ -16,6 +16,10 @@ Workflow description
 -> review, delivery, lifecycle update
 ```
 
+## Quick Start
+
+Start with [docs/QUICK_START.md](docs/QUICK_START.md).
+
 ## Current Structure
 
 ```text
@@ -45,7 +49,9 @@ The organizational source of truth is:
 - `ORG_STRUCTURE.md`
 - `docs/VISION.md`
 - `docs/ARCHITECTURE.md`
-- `departments/governance/`
+- `docs/AI_READING_GUIDE.md`
+- `departments/governance/policies/`
+- `departments/governance/workflows/`
 - `departments/ORG_STRUCTURE.md`
 - `companies/*/company.spec.json`
 - `companies/*/ORG_STRUCTURE.md`

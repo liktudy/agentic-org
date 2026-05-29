@@ -1,8 +1,10 @@
 # Codex Adapter
 
-本目录保留 `agentic-org` 面向 Codex 的集团级适配说明。
+This directory documents how `agentic-org` should be used by Codex-style tools.
 
-当前入口：
+Rules:
 
-- 根目录 `AGENTS.md`
-- 组织真源在 `departments/governance/` 和 `companies/*/departments/`
+- Read `AGENTS.md` first.
+- Use English source-of-truth documents by default.
+- Organization source of truth lives in `departments/governance/` and `companies/*/departments/`.
+- Do not treat Codex-specific instructions as the organization source of truth.

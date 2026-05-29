@@ -1,10 +1,10 @@
 # Minimal Operation Policy
 
-## Purpose
+### Purpose
 
 `agentic-org` must stay small, precise, and ready to use.
 
-## Hard Rules
+### Hard Rules
 
 - Do not create process logs by default.
 - Do not create temporary drafts by default.
@@ -12,7 +12,7 @@
 - Do not generate extra departments, agents, templates, or workflows for possible future use.
 - Keep final artifacts, error reports, decision requests, and meaningful governance updates only.
 
-## Logging Rules
+### Logging Rules
 
 Successful task:
 
@@ -39,6 +39,6 @@ Do not generate by default:
 - temporary drafts
 - repeated failure logs without decision value
 
-## Exception
+### Exception
 
 Archive a log only when it has governance, review, or reusable learning value.

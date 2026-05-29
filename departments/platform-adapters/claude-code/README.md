@@ -1,8 +1,10 @@
 # Claude Code Adapter
 
-本目录保留 `agentic-org` 面向 Claude Code 的集团级适配说明。
+This directory documents how `agentic-org` should be used by Claude Code.
 
-当前入口：
+Rules:
 
-- 根目录 `CLAUDE.md`
-- 组织真源在 `departments/governance/` 和 `companies/*/departments/`
+- Read `CLAUDE.md` first.
+- Use English source-of-truth documents by default.
+- Organization source of truth lives in `departments/governance/` and `companies/*/departments/`.
+- Do not treat Claude-specific instructions as the organization source of truth.

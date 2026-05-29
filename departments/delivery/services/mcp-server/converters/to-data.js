@@ -4,7 +4,7 @@ const path = require("path");
 function convertToCsv(sourcePath, outputDir, outputName) {
   const absPath = path.resolve(sourcePath);
   if (!fs.existsSync(absPath)) {
-    throw new Error(`文件不存在: ${absPath}`);
+    throw new Error(`File does not exist: ${absPath}`);
   }
 
   const content = fs.readFileSync(absPath, "utf-8");
@@ -23,13 +23,13 @@ function convertToCsv(sourcePath, outputDir, outputName) {
   }
 
   if (tableCount === 0) {
-    return `警告: 未在 ${path.basename(absPath)} 中找到表格`;
+    return `Warning: no Markdown tables found in ${path.basename(absPath)}`;
   }
 
   const outName = (outputName || path.basename(absPath, ".md")) + ".csv";
   const outPath = path.join(outputDir, outName);
   fs.writeFileSync(outPath, csvOutput, "utf-8");
-  return `CSV 已生成: ${outPath}（${tableCount} 个表格）`;
+  return `CSV generated: ${outPath} (${tableCount} tables)`;
 }
 
 function parseTableToCsv(headerRow, dataRows) {

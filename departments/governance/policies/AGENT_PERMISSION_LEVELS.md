@@ -1,16 +1,16 @@
 # Agent Permission Levels
 
-## 中文版
+## Purpose
 
-### 目标
+This policy defines permission levels for role agents.
 
-本文件定义 `agentic-org` 的 agent 权限等级。新增员工 agent 时必须先选择权限等级，再写入 frontmatter。
+Use the lowest viable permission level. Escalate unclear permission assignments to the Highest Leader.
 
-### 等级
+## Levels
 
-#### L0 observer
+### L0 Observer
 
-只读观察者，适合审核、分析和建议。
+Read-only analysis, review, and recommendation.
 
 ```yaml
 permission:
@@ -19,9 +19,16 @@ permission:
   webfetch: deny
 ```
 
-#### L1 researcher
+Use for:
 
-调研员，适合资料查询、模型选型和 benchmark 研究。
+- plan review
+- data verification
+- boundary checks
+- governance recommendations
+
+### L1 Researcher
+
+External information gathering without file edits.
 
 ```yaml
 permission:
@@ -30,9 +37,16 @@ permission:
   webfetch: allow
 ```
 
-#### L2 writer
+Use for:
 
-写作者，适合写内部文档、报告、流程状态和交付草稿。
+- model research
+- benchmark research
+- source comparison
+- market or ecosystem scans
+
+### L2 Writer
+
+Source file writing without command execution.
 
 ```yaml
 permission:
@@ -41,9 +55,16 @@ permission:
   webfetch: deny
 ```
 
-#### L3 executor
+Use for:
 
-执行者，适合运行测试脚本、采集数据和生成原始结果。
+- internal reports
+- strategy drafts
+- metric definitions
+- workflow or template updates
+
+### L3 Executor
+
+File writing and command execution inside approved scope.
 
 ```yaml
 permission:
@@ -52,15 +73,18 @@ permission:
   webfetch: deny
 ```
 
-### 分配原则
+Use for:
 
-- 默认使用最低可行权限。
-- 是否需要写文件决定 `edit`。
-- 是否需要执行命令决定 `bash`。
-- 是否需要外部资料决定 `webfetch`。
-- 职位高低不自动对应高权限。
-- 权限不确定时必须提交最高领导者确认。
+- running tests
+- collecting benchmark data
+- converting artifacts
+- generating structured result files
 
-## English Version
+## Assignment Rules
 
-Use the lowest viable permission level. Escalate unclear permission assignments to the Highest Leader.
+- Permission follows task need, not role seniority.
+- Do not grant `bash: allow` unless command execution is required.
+- Do not grant `webfetch: allow` unless external information is required.
+- Do not combine unrelated permission needs into one agent.
+- Permission expansion requires review.
+- Unclear permission assignment must be escalated.

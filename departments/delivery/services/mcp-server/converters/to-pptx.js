@@ -9,13 +9,13 @@ function findPandoc() {
     const which = execSync("where pandoc", { encoding: "utf-8", stdio: "pipe" }).trim().split("\n")[0];
     if (which) return which;
   } catch { }
-  throw new Error("pandoc 未安装。请运行 setup.ps1 下载，或通过 winget install pandoc 安装。");
+  throw new Error("pandoc is not installed. Run setup.ps1 to download it, or install it with: winget install pandoc.");
 }
 
 function convert(sourcePath, templateConfig, outputDir, outputName, toFormat) {
   const absPath = path.resolve(sourcePath);
   if (!fs.existsSync(absPath)) {
-    throw new Error(`文件不存在: ${absPath}`);
+    throw new Error(`File does not exist: ${absPath}`);
   }
 
   const pandoc = findPandoc();
@@ -25,7 +25,7 @@ function convert(sourcePath, templateConfig, outputDir, outputName, toFormat) {
   const cmd = `"${pandoc}" "${absPath}" -o "${outPath}" --from markdown --to ${toFormat.replace(".", "")}`;
   execSync(cmd, { stdio: "pipe", encoding: "utf-8" });
 
-  return `${toFormat.toUpperCase()} 已生成: ${outPath}`;
+  return `${toFormat.toUpperCase()} generated: ${outPath}`;
 }
 
 module.exports = {

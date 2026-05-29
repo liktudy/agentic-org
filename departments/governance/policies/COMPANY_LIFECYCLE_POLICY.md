@@ -1,65 +1,52 @@
 # Company Lifecycle Policy
 
-## 中文版
+## Purpose
 
-### 定位
+This policy defines company lifecycle states and review triggers.
 
-子公司是长期存在的业务执行单元，不是一次性任务目录。总部必须管理子公司的生命周期、绩效、重叠和关闭流程。
+Companies are long-lived business execution units. They are not disposable task folders.
 
-### 生命周期状态
+## Lifecycle States
 
-```text
-active
-paused
-under_review
-merge_candidate
-closure_candidate
-closed
-```
+- `active`: company can accept approved workflow execution.
+- `paused`: company is temporarily inactive.
+- `under_review`: company requires lifecycle or performance review.
+- `merge_candidate`: company may overlap with another company.
+- `closure_candidate`: company may be closed after approval.
+- `closed`: company is inactive and retained for traceability.
 
-### 状态含义
+## Review Triggers
 
-- `active`：正常可承接工作流。
-- `paused`：暂不承接新任务，但保留组织资产。
-- `under_review`：需要总部评估，通常由失败、长期未执行或边界不清触发。
-- `merge_candidate`：与其他子公司职责重叠，建议合并评估。
-- `closure_candidate`：建议关闭，但尚未得到确认。
-- `closed`：已关闭并归档，不再承接新任务。
+Headquarters should review a company when:
 
-### 触发评估
+- workflow execution repeatedly fails
+- review failure count reaches escalation threshold
+- company is inactive for a long period
+- company overlaps with another company
+- company output no longer creates useful delivery value
+- domain boundary becomes unclear
+- Highest Leader requests review
 
-以下情况需要总部提示执行者确认是否调整：
+## Closure And Merge Rules
 
-- 子公司工作流连续失败。
-- 子公司长期没有执行。
-- 子公司与其他子公司负责场景重合。
-- 子公司业务目标不再成立。
-- 子公司产出长期无法形成有效交付。
+Headquarters may recommend pause, merge, restructure, or closure.
 
-### 关闭原则
+Headquarters must not close, merge, split, or restructure a company automatically.
 
-总部不能自动关闭子公司。关闭、合并、重组必须得到执行者或最高领导者确认。
+Closure, merge, split, and restructuring require Highest Leader approval and must follow `ORGANIZATION_CHANGE_POLICY.md`.
 
-### 绩效指标
+## Performance Signals
 
-推荐记录：
+Track only meaningful lifecycle signals:
 
-```text
-execution_count
-success_count
-failure_count
-last_execution_at
-last_success_at
-review_failure_count
-reuse_count
-delivery_count
-overlap_warnings
-```
+- execution count
+- success count
+- failure count
+- review failure count
+- reuse count
+- delivery count
+- overlap warnings
+- last execution date
+- last success date
 
-### 决策留痕
-
-生命周期变化只记录关键结论，写入 `company.spec.json` 的 `lifecycle` 和 `governance_notes`。
-
-## English Version
-
-Companies are long-lived business execution units. Headquarters may recommend pause, merge, restructure, or closure, but cannot close a company automatically without approval.
+Do not create process logs by default.

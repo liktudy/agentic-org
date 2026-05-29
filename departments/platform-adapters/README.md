@@ -1,9 +1,10 @@
 # Platform Adapters Department
 
-平台适配部维护 `agentic-org` 对 Codex、Claude Code、OpenCode 和未来智能体平台的适配层。
+The Platform Adapters Department keeps runtime-specific configuration separate from the organization source of truth.
 
-原则：
+Rules:
 
-- 组织真源在 `departments/` 和 `companies/`。
-- 平台配置只是运行适配器。
-- 平台入口应从组织真源生成或同步，避免多份配置漂移。
+- Organization source of truth lives in `departments/` and `companies/`.
+- Platform files are adapters only.
+- Adapters must be generated or synchronized from organization definitions when possible.
+- Runtime-specific files must not redefine authority, company structure, or role boundaries.

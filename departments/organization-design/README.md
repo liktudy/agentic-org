@@ -1,13 +1,13 @@
 # Organization Design Department
 
-组织设计部负责把用户描述的工作流转化为组织设计判断。
+The Organization Design Department decides whether a workflow should reuse an existing company or require a new long-lived company.
 
-核心职责：
+Responsibilities:
 
-- 判断已有子公司是否可以复用。
-- 判断是否需要新建子公司。
-- 设计新公司的业务域、部门、岗位和边界。
-- 识别子公司重叠，提出合并建议。
-- 识别长期失败或长期未执行的子公司，提出暂停、重组或关闭建议。
+- Evaluate workflow boundaries.
+- Check company reuse before company creation.
+- Design company, department, and role boundaries.
+- Detect overlap across companies.
+- Recommend company merge, pause, restructure, or closure when appropriate.
 
-组织设计部只提出组织建议，不自动执行公司工作流。
+This department submits recommendations. It does not execute company workflows without approval.

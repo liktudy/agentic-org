@@ -5,7 +5,7 @@ const toHtml = require("./to-html.js");
 async function convert(sourcePath, templateConfig, outputDir, outputName) {
   const absPath = path.resolve(sourcePath);
   if (!fs.existsSync(absPath)) {
-    throw new Error(`文件不存在: ${absPath}`);
+    throw new Error(`File does not exist: ${absPath}`);
   }
 
   const htmlPath = path.join(outputDir, `${path.basename(absPath, ".md")}.html`);
@@ -31,10 +31,10 @@ async function convert(sourcePath, templateConfig, outputDir, outputName) {
 
     await browser.close();
     fs.unlinkSync(htmlPath);
-    return `PDF 已生成: ${outPath}`;
+    return `PDF generated: ${outPath}`;
   } catch (err) {
     if (fs.existsSync(htmlPath)) fs.unlinkSync(htmlPath);
-    throw new Error(`PDF 转换失败（需要安装 Chromium）: ${err.message}`);
+    throw new Error(`PDF conversion failed. Chromium is required: ${err.message}`);
   }
 }
 

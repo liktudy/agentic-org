@@ -1,12 +1,12 @@
 # Workflow Factory Department
 
-工作流工厂部负责把用户描述的工作流转换为可归档、可生成、可执行前审批的公司规格。
+The Workflow Factory Department turns approved organization designs into company assets.
 
-核心职责：
+Responsibilities:
 
-- 将自然语言工作流转成结构化 `company.spec.json`。
-- 生成或更新公司目录、部门、岗位、workflow 和 runtime adapter。
-- 记录公司生成原因、适用场景、输入输出产物和生命周期状态。
-- 在执行公司工作流前提交确认。
+- Generate structured `company.spec.json` files.
+- Generate or update company `README.md`, `ORG_STRUCTURE.md`, `WORKFLOW.md`, agent files, and runtime adapters.
+- Apply headquarters standards during generation.
+- Stop before workflow execution and request approval.
 
-工作流工厂部生成组织资产，不直接替代子公司执行具体业务。
+The Workflow Factory generates organization assets. It does not replace company execution.

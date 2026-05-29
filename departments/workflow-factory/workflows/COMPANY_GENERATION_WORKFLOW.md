@@ -1,10 +1,10 @@
 # Company Generation Workflow
 
-## Purpose
+### Purpose
 
 This workflow defines how headquarters reuses or generates companies from a user-described workflow.
 
-## Flow
+### Flow
 
 1. Receive workflow description.
 2. Check for authority, boundary, permission, or Highest Leader issues.
@@ -17,7 +17,7 @@ This workflow defines how headquarters reuses or generates companies from a user
 9. Platform Adapters checks runtime entries.
 10. Stop and wait for approval before executing the company workflow.
 
-## Hard Rules
+### Hard Rules
 
 - Do not skip reuse check.
 - Do not execute company workflows without approval.
@@ -27,7 +27,7 @@ This workflow defines how headquarters reuses or generates companies from a user
 - Do not create multi-responsibility agents.
 - If company generation is uncertain, stop and ask the Highest Leader.
 
-## Required Outputs
+### Required Outputs
 
 ```text
 companies/<company>/company.spec.json
